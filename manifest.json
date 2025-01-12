@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Particle Effect",
+  "version": "1.0",
+  "description": "Dynamic particle simulation with a trajectory, forming illuminated clusters and streaks.",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "options_page": "options.html"
+}
