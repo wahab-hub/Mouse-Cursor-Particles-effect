@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Particle Effect</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <ul class="nav">
+          <li class="nav-item active" data-section="general">
+            <a href="#" class="nav-link">
+              <i class="fas fa-cog"></i>
+              <span class="nav-text">General</span>
+            </a>
+          </li>
+          <li class="nav-item" data-section="shape-options">
+            <a href="#" class="nav-link">
+              <i class="fas fa-shapes"></i>
+              <span class="nav-text">Shape Options</span>
+            </a>
+          </li>
+          <li class="nav-item" data-section="character-options">
+            <a href="#" class="nav-link">
+              <i class="fas fa-keyboard"></i>
+              <span class="nav-text">Character Options</span>
+            </a>
+          </li>
+          <li class="nav-item" data-section="animation">
+            <a href="#" class="nav-link">
+              <i class="fas fa-film"></i>
+              <span class="nav-text">Animation</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <div id="general" class="section active">
+          <h2>General Settings</h2>
+          <div class="setting">
+            <label for="particleColor">Particle Color:</label>
+            <input type="color" id="particleColor" value="#0000ff" />
+          </div>
+          <div class="setting">
+            <label for="particleCount">Max Particles:</label>
+            <input
+              type="number"
+              id="particleCount"
+              value="50"
+              min="10"
+              max="200"
+            />
+          </div>
+          <div class="setting">
+            <label for="particleSpeed">Particle Speed (ms):</label>
+            <input
+              type="number"
+              id="particleSpeed"
+              value="15"
+              min="10"
+              max="50"
+            />
+          </div>
+          <div class="setting">
+            <label for="colorVariation">Color Variation:</label>
+            <input
+              type="range"
+              id="colorVariation"
+              min="0"
+              max="100"
+              value="50"
+            />
+          </div>
+          <div class="setting">
+            <label for="glowIntensity">Glow Intensity:</label>
+            <input type="range" id="glowIntensity" min="0" max="10" value="5" />
+          </div>
+        </div>
+
+        <div id="shape-options" class="section">
+          <h2>Shape Options</h2>
+          <div class="setting">
+            <label for="trailType">Trail Type:</label>
+            <select id="trailType">
+              <option value="circle">Circle</option>
+              <option value="square">Square</option>
+              <option value="triangle">Triangle</option>
+              <option value="star">Star</option>
+              <option value="character">Custom Character</option>
+            </select>
+          </div>
+          <div class="setting">
+            <label for="particleSize">Particle Size (px):</label>
+            <input type="number" id="particleSize" value="5" min="1" max="20" />
+          </div>
+        </div>
+
+        <div id="character-options" class="section">
+          <h2>Character Options</h2>
+          <div class="setting">
+            <label for="customCharacter">Character:</label>
+            <input type="text" id="customCharacter" value="*" maxlength="1" />
+          </div>
+          <div class="setting">
+            <label for="characterFont">Font:</label>
+            <select id="characterFont">
+              <option value="Arial">Arial</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Impact">Impact</option>
+              <option value="Comic Sans MS">Comic Sans MS</option>
+              <option value="Trebuchet MS">Trebuchet MS</option>
+              <option value="Palatino Linotype">Palatino Linotype</option>
+              <option value="Garamond">Garamond</option>
+            </select>
+          </div>
+          <div class="setting">
+            <label for="characterSize">Size (px):</label>
+            <input type="number" id="characterSize" value="12" min="5" max="30" />
+          </div>
+        </div>
+
+        <div id="animation" class="section">
+          <h2>Animation Settings</h2>
+          <div class="setting">
+            <label for="enableVelocity">Enable Velocity:</label>
+            <input type="checkbox" id="enableVelocity" checked />
+          </div>
+          <div class="setting">
+            <label for="velocityX">Velocity X:</label>
+            <input type="number" id="velocityX" value="2" min="0" max="10" />
+          </div>
+
+          <div class="setting">
+            <label for="velocityY">Velocity Y:</label>
+            <input type="number" id="velocityY" value="3" min="0" max="10" />
+          </div>
+          <div class="setting">
+            <label for="enableRotation">Enable Rotation:</label>
+            <input type="checkbox" id="enableRotation" />
+          </div>
+          <div class="setting">
+            <label for="rotationSpeed">Rotation Speed:</label>
+            <input
+              type="number"
+              id="rotationSpeed"
+              value="1"
+              min="0"
+              max="10"
+            />
+          </div>
+          <div class="setting">
+            <label for="clusterFactor">Cluster Factor:</label>
+            <input
+              type="number"
+              id="clusterFactor"
+              value="10"
+              min="0"
+              max="100"
+            />
+          </div>
+        </div>
+
+        <button id="saveSettings">Save Settings</button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
